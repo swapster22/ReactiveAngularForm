@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## ScreenShots
+# Wrong Inputs & Empty Inputs
+![UserFormSS](https://user-images.githubusercontent.com/44148166/139422611-d815a071-2ad7-4adb-9cc4-c62c22e9c6c3.png) <br>
+
+# On Submitting an Empty Form
+
+![UserFormSS1](https://user-images.githubusercontent.com/44148166/139422858-8682588a-8885-4801-814a-ef26a0edf720.png)
+
