@@ -1,0 +1,32 @@
+.items{
+    padding-top: 20px;
+
+}
+
+input.ng-touched.ng-invalid{
+    border: solid 2px red;
+}
+
+select.ng-touched.ng-invalid{
+    border: solid 2px red;
+
+}
+
+input.ng-touched.ng-valid{
+    border: solid 2px green;
+}
+
+select.ng-touched.ng-valid{
+    border: solid 2px green;
+
+
+}
+
+.message{
+    color: red;
+    font-weight: bold;
+}
+
+label{
+    font-weight: bold;
+}

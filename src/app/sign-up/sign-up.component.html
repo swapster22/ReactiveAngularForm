@@ -1,0 +1,136 @@
+<div class="container items">
+    <h1>User Details</h1>
+    <h4>Enter your details to signup</h4>
+    
+    <form [formGroup]="userDetailForm" >
+        <div class="row form-group" >
+
+            <div class="col items">
+                <label for="FirstName">First Name</label>
+                <input type="text" formControlName="FirstName"  class="form-control" />
+                <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('FirstName').invalid && fetchFormData.FirstName.untouched)">FirstName is required</div>
+                   
+                <div *ngIf="fetchFormData.FirstName.touched && fetchFormData.FirstName.invalid" class="alert alert-danger">
+                    <div *ngIf="fetchFormData.FirstName.errors.required">FirstName is required.</div>
+                    <div *ngIf="fetchFormData.FirstName.errors.pattern">FirstName should contain 3 character alphabate and space</div>
+                </div>
+
+                             
+            </div>
+
+            <div class="col items">
+                <label>Last Name</label>
+                <input type="text" formControlName="LastName" class="form-control">
+                <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('LastName').invalid && fetchFormData.LastName.untouched)">LastName is required</div>
+                   
+                <div *ngIf="fetchFormData.LastName.touched && fetchFormData.LastName.invalid" class="alert alert-danger">
+                    <div *ngIf="fetchFormData.LastName.errors.required">LastName is required.</div>
+                    <div *ngIf="fetchFormData.LastName.errors.pattern">LastName should contain 3 character alphabate and space</div>
+                </div>
+            </div>
+
+            <div class="col items">
+                <label>Email</label>
+                <input type="email" formControlName="Email" class="form-control">
+                <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('Email').invalid && fetchFormData.Email.untouched)">Email is required</div>
+                   
+                <div *ngIf="fetchFormData.Email.touched && fetchFormData.Email.invalid" class="alert alert-danger">
+                    <div *ngIf="fetchFormData.Email.errors.required">Email is required.</div>
+                    <div *ngIf="fetchFormData.Email.errors.email">Email not valid</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+                <div class="col items">
+                    <label>Password</label>
+                    <input type="password" formControlName="Password" class="form-control">
+                    <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('Password').invalid && fetchFormData.Password.untouched)">Password is required</div>
+                   
+                    <div *ngIf="fetchFormData.Password.touched && fetchFormData.Password.invalid" class="alert alert-danger">
+                        <div *ngIf="fetchFormData.Password.errors.required">Password is required.</div>
+                        
+                    </div>
+                </div>
+                <div class="col items">
+                    <label>Date of Birth</label>
+                    <input type="date" formControlName="DOB" class="form-control">
+                    <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('DOB').invalid && fetchFormData.DOB.untouched)">Date Of Birth is required</div>
+                   
+                    <div *ngIf="fetchFormData.DOB.touched && fetchFormData.DOB.invalid" class="alert alert-danger">
+                        <div *ngIf="fetchFormData.DOB.errors.required">Date of Birth is required.</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col items">
+                    <label>Gender</label><br>
+                    <input type="radio"  formControlName="gender" value="Male">
+                    <label for="Male">Male</label>&nbsp;
+                    <input type="radio" formControlName="gender" value="Female">
+                    <label for="female">Female</label>
+                    <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('gender').invalid && fetchFormData.gender.untouched)">Gender is required</div>
+                   
+                    <div *ngIf="fetchFormData.gender.touched && fetchFormData.gender.invalid" class="alert alert-danger">
+                        <div *ngIf="fetchFormData.gender.errors.required">Gender is required.</div>
+                        
+                    </div>
+                </div>
+         </div>
+         <div class="row">
+            <div class="col items">
+                <label for="Designation">Choose your Designation</label>&nbsp;
+                <input list="Designations" formControlName="Designation" class="form-control" id="Designation">
+                <datalist id="Designations" >
+                    <option value="CEO">
+                    <option value="Manager">
+                    <option value="PAT">
+                    <option value="PA">
+                    <option value="Associate">
+                    <option value="Senior Associate">
+                </datalist>
+                <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('Designation').invalid && fetchFormData.Designation.untouched)">Designation is required</div>
+                   
+                <div *ngIf="fetchFormData.Designation.touched && fetchFormData.Designation.invalid" class="alert alert-danger">
+                    <div *ngIf="fetchFormData.Designation.errors.required">Designation is required.</div>
+                    
+                </div>
+
+                
+            </div>
+            <div class="col items">
+                <label for="Level">Choose your Floor Level</label>&nbsp;
+                <select style="width: 30em;" class="form-control" formControlName="Level">
+                    <option value="">.....</option>
+                    <option value="Level1">Level 1</option>
+                    <option value="Level2">Level 2</option>
+                    <option value="Level3">Level 3</option>
+                    <option value="Level4">Level 4</option>
+                    <option value="Level5">Level 5</option>
+                </select>
+                <div class="alert alert-danger" [hidden]="!(show && userDetailForm.get('Level').invalid && fetchFormData.Level.untouched)">Level is required</div>
+                   
+                <div *ngIf="fetchFormData.Level.touched && fetchFormData.Level.invalid" class="alert alert-danger">
+                    <div *ngIf="fetchFormData.Level.errors.required">Level is required.</div>
+                    
+                </div>
+            </div>
+
+            
+        </div>         
+        
+        <div class="row">
+             <div class="col items">
+                 <input type="button" value="Submit" (click)="show=true; Submit()" class="btn btn-success btn-lg btn-block ">
+             </div>
+             <div class="col items">
+                 <input type="button" value="Reset" (click)="this.userDetailForm.reset();" class="btn btn-warning btn-lg btn-block">
+             </div>
+         </div>
+
+         
+
+    
+    </form>
+</div>
